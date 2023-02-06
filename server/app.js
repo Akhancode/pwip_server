@@ -12,10 +12,19 @@ app.get('/', (req, res)=>{
 
 
 
+
+
+//REGULAR MIDDLEWARE
+app.use(express.json())
+app.use(express.urlencoded({extended:true}))
+
+
 // IMPORT ROUTES
-const home = require('./routes/home');
+const loggerHome = require('./routes/loggerHome');
+
+
 // ROUTER MIDDLEWARE
-app.use('/home',home)
+app.use('/loggerHome',loggerHome)
 
 
 
