@@ -6,19 +6,17 @@ var cors = require('cors')
 const PORT = process.env.PORT
 
 
+//basic Route : / testing
+
 app.get('/', (req, res)=>{
     res.status(200);
     res.send("Welcome to root URL of Server");
 });
 
 
-
-
-
 //REGULAR MIDDLEWARE
 app.use(express.json())
 app.use(cors({ origin: 'http://localhost:3000'}));
-// app.use(express.urlencoded({extended:true}))
 
 
 // IMPORT ROUTES
