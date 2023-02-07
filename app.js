@@ -13,10 +13,9 @@ app.get('/', (req, res)=>{
     res.send("Welcome to root URL of Server");
 });
 
-
 //REGULAR MIDDLEWARE
 app.use(express.json())
-app.use(cors({ origin: 'http://localhost:3000'}));
+app.use(cors({ origin: "https://pwip-assessment.netlify.app" || 'http://localhost:3000'}));
 
 
 // IMPORT ROUTES
