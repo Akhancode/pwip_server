@@ -1,4 +1,4 @@
-# Sort and Filter Project
+# PWIP ASSESSMENT
 
 A simple application that allows users to sort and filter data by each value of a column with pagination done in the backend and filtering done in the backend.
 
