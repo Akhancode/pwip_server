@@ -69,7 +69,7 @@ class WhereClause {
     if (!this.bigQ.sort) return this; //Guardian Clause for clean code
 
     //RECENT SORTING OLD TO NEW (DATE) using class Date
-    if (this.bigQ.sort === "recent") {
+    if (this.bigQ.sort === "old") {
       this.base.sort(function (a, b) {
         return new Date(a.creationTimestamp) - new Date(b.creationTimestamp);
       });
@@ -82,6 +82,49 @@ class WhereClause {
         );
       });
     }
+    //sort by logID
+    if (this.bigQ.sort === "logID") {
+      this.base.sort(function (a, b) {
+        return (
+          a.logId - b.logId
+        );
+      });
+    }
+    //sort by APPLICATION ID
+    if (this.bigQ.sort === "applicationId") {
+      this.base.sort(function (a, b) {
+        return (
+          a.applicationId - b.applicationId
+        );
+      });
+    }
+    //sort by APPLICATION TYPE [string Ascending]
+    if (this.bigQ.sort === "applicationType") {
+      this.base.sort((a, b) => {
+        if (a.applicationType < b.applicationType) {
+            return -1;
+        }
+        if (a.applicationType > b.applicationType) {
+            return 1;
+        }
+        return 0;
+    });
+    }
+    //sort by ACTION TYPE [string Ascending]
+    if (this.bigQ.sort === "actionType") {
+      this.base.sort((a, b) => {
+        if (a.actionType < b.actionType) {
+            return -1;
+        }
+        if (a.actionType > b.actionType) {
+            return 1;
+        }
+        return 0;
+    });
+    }
+
+
+
 
     return this;
   }

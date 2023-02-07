@@ -1,9 +1,10 @@
-const express = require('express')
 require('dotenv').config()
-
+const express = require('express')
 const app = express()
+var cors = require('cors')
 
 const PORT = process.env.PORT
+
 
 app.get('/', (req, res)=>{
     res.status(200);
@@ -16,7 +17,8 @@ app.get('/', (req, res)=>{
 
 //REGULAR MIDDLEWARE
 app.use(express.json())
-app.use(express.urlencoded({extended:true}))
+app.use(cors({credentials: true, origin: 'http://localhost:3000'}));
+// app.use(express.urlencoded({extended:true}))
 
 
 // IMPORT ROUTES

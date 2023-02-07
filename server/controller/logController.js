@@ -16,7 +16,7 @@ exports.all_log_data = async (req, res) => {
       const response = await axios.get('https://run.mocky.io/v3/a2fbc23e-069e-4ba5-954c-cd910986f40f');
       const ALL_LOGS = response.data.result.auditLog
       
-      const logsObject = new WhereClause(ALL_LOGS,req.query)
+      const logsObject = new WhereClause(ALL_LOGS,req.query).filter()
       
       logsObject?.sort()
       logsObject?.pager(resultPerPage)

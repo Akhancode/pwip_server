@@ -1,0 +1,29 @@
+.navigationBarContainer{
+    display: flex;
+    padding-block: 0.5rem;
+    align-items: center;
+    flex: 1;
+
+   
+}
+
+.navigationBarContainer .left{
+    display: flex;
+    padding: 0.6rem;
+    align-items: center;
+    justify-content: flex-start
+}
+.navigationBarContainer .left {
+    color: #0f489b;
+    font-weight: 500;
+}
+
+.navigationBarContainer .arrow{
+    margin-inline: 0.5rem;
+    font-size: 1.2rem;
+    color:#2f3941 ;
+}
+
+.navigationBarContainer .left div:last-child{
+    color:lightslategray 
+}
