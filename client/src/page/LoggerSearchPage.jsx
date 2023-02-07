@@ -3,6 +3,9 @@ import "./LoggerSearchPage.css";
 import PaginationBar from "../components/PaginationBar/PaginationBar";
 import axios from "axios";
 import SearchBar from "../components/SearchBar/SearchBar";
+
+
+
 const demoData = [
   {
     logId: 906468196730134,
@@ -159,7 +162,7 @@ const demoData = [
 const LoggerSearchPage = () => {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
-  const [url, setUrl] = useState(`http://localhost:7000/loggerHome/all_logs?`);
+  const [url, setUrl] = useState(`${process.env.REACT_APP_MY_BASEURL}/loggerHome/all_logs?`);
   const [sortUrl, setSortUrl] = useState(null);
   const [status, setStatus] = useState(null);
   const [totalItem, setTotalItem] = useState(0);
@@ -217,7 +220,6 @@ const LoggerSearchPage = () => {
       setStatus("loading");
       const result = await axios.get(url);
 
-      console.log(result.data.logs)
       setData(result.data.logs);
       setTotalItem(result.data.totalItem);
       setStatus(null);
