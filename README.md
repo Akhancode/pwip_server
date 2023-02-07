@@ -10,7 +10,7 @@ Pagination of data in the backend
 Dynamic updating of data based on user actions
 
 # Usage
-To use this project, simply clone the repository and run npm install to install the required dependencies. Then, run npm start to start the development server and access the application in your browser at http://localhost:3000/.
+To use this project, simply clone the repository and run npm install to install the required dependencies. Then, run npm start to start the development server and access the application in your browser at https://pwip-assessment.netlify.app/ OR http://localhost:3000/.
 
 # Tech Stack
 ReactJS for frontend development
