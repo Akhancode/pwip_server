@@ -31,15 +31,14 @@ const SearchBar = (props) => {
       (search.fromDate ? `startDate=${search.fromDate}&` : "") +
       (search.toDate ? `endDate=${search.toDate}&` : "");
       
-      console.log(search);
-      console.log(search.fromDate);
+    
       setUrl(searchURL)
       console.log(url);
   };
 
-  useEffect(() => {
-    console.log(search);
-  }, [search]);
+//   useEffect(() => {
+//     console.log(search);
+//   }, [search]);
 
   return (
     <div className="SearchBarContainer">

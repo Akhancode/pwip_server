@@ -17,15 +17,19 @@ exports.all_log_data = async (req, res) => {
       const ALL_LOGS = response.data.result.auditLog
       
       const logsObject = new WhereClause(ALL_LOGS,req.query).filter()
-      
+      const totalItem = logsObject.base.length
       logsObject?.sort()
       logsObject?.pager(resultPerPage)
       
       logs_paginated = logsObject?.base
-      res.send(logs_paginated);
+      // res.send(logs_paginated);
+      res.json({
+        totalItem:totalItem,
+        logs:logs_paginated
+      })
 
     } catch (error) {
-      console.log("eroor",error)
+      console.log("error in fetching or filter or sorting",error)
       res.status(500).send(error);
     }
   } 

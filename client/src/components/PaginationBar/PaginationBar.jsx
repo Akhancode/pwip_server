@@ -8,11 +8,12 @@ import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 const PaginationBar = (props) => {
-  const { page, setPage } = props;
+  const { page, setPage,totalItem } = props;
 
   const handlePageClick = (data) => {
     let currentPage = data.selected + 1;
     setPage(currentPage);
+    console.log(`total item : ${totalItem}`)
   };
 
   return (
@@ -21,7 +22,7 @@ const PaginationBar = (props) => {
         previousLabel={<KeyboardArrowLeftIcon />}
         nextLabel={<KeyboardArrowRightIcon />}
         breakLabel={"..."}
-        pageCount={15}
+        pageCount={totalItem}
         marginPagesDisplayed={2}
         onPageChange={handlePageClick}
         containerClassName={"pagination"}
