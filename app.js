@@ -15,7 +15,7 @@ app.get('/', (req, res)=>{
 
 //REGULAR MIDDLEWARE
 app.use(express.json())
-app.use(cors({ origin: "https://pwip-assessment.netlify.app" || 'http://localhost:3000'}));
+app.use(cors({ origin: "https://pwip-assessment.netlify.app"}));
 
 
 // IMPORT ROUTES
