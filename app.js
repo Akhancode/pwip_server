@@ -31,6 +31,7 @@ app.use('/loggerHome',loggerHome)
 
 
 app.listen(process.env.PORT,()=>{
+    console.log("test changed - jenkins")
     console.log(`server  running at port ${process.env.PORT}`)
     
 })
